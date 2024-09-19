@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테트리스 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-menu" class="menu active">
+        <h1>테트리스 게임</h1>
+        <button onclick="startGame()">게임 시작</button>
+        <button onclick="openSettings()">설정</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <canvas id="tetris" width="240" height="400"></canvas>
+        <div class="info">
+            <div id="score">점수: 0</div>
+            <div id="level">레벨: 0</div>
+            <div id="lines">라인: 0</div>
+            <div id="highScore">최고 점수: 0</div>
+        </div>
+        <div class="side">
+            <div>
+                <h3>다음 블록</h3>
+                <canvas id="next" width="120" height="120"></canvas>
+            </div>
+            <div>
+                <h3>보류 블록</h3>
+                <canvas id="hold" width="120" height="120"></canvas>
+            </div>
+        </div>
+        <p>'P' 키를 눌러 일시 정지/해제</p>
+    </div>
+
+    <div id="settings-menu" class="menu hidden">
+        <h2>설정</h2>
+        <div>
+            <label for="theme-select">테마 선택:</label>
+            <select id="theme-select" onchange="changeTheme(this.value)">
+                <option value="default">기본 테마</option>
+                <option value="dark">다크 테마</option>
+                <option value="light">라이트 테마</option>
+            </select>
+        </div>
+        <div>
+            <h3>키 설정</h3>
+            <div>
+                <label for="moveLeftKey">좌로 이동:</label>
+                <input type="text" id="moveLeftKey" value="ArrowLeft" readonly onclick="changeKey('moveLeft')">
+            </div>
+            <div>
+                <label for="moveRightKey">우로 이동:</label>
+                <input type="text" id="moveRightKey" value="ArrowRight" readonly onclick="changeKey('moveRight')">
+            </div>
+            <div>
+                <label for="softDropKey">소프트 드롭:</label>
+                <input type="text" id="softDropKey" value="ArrowDown" readonly onclick="changeKey('softDrop')">
+            </div>
+            <div>
+                <label for="hardDropKey">하드 드롭:</label>
+                <input type="text" id="hardDropKey" value="Space" readonly onclick="changeKey('hardDrop')">
+            </div>
+            <div>
+                <label for="rotateLeftKey">좌회전:</label>
+                <input type="text" id="rotateLeftKey" value="Q" readonly onclick="changeKey('rotateLeft')">
+            </div>
+            <div>
+                <label for="rotateRightKey">우회전:</label>
+                <input type="text" id="rotateRightKey" value="W" readonly onclick="changeKey('rotateRight')">
+            </div>
+            <div>
+                <label for="holdKey">블록 보류:</label>
+                <input type="text" id="holdKey" value="C" readonly onclick="changeKey('hold')">
+            </div>
+            <div>
+                <label for="pauseKey">일시 정지:</label>
+                <input type="text" id="pauseKey" value="P" readonly onclick="changeKey('pause')">
+            </div>
+        </div>
+        <button onclick="closeSettings()">닫기</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

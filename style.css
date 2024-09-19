@@ -1,0 +1,105 @@
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+:root {
+    --background-color: #000;
+    --text-color: #fff;
+}
+
+body.light-theme {
+    --background-color: #f0f0f0;
+    --text-color: #000;
+}
+
+body.dark-theme {
+    --background-color: #121212;
+    --text-color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+canvas {
+    border: 2px solid var(--text-color);
+}
+
+.info {
+    margin-left: 20px;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.side div {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu.hidden {
+    display: none;
+}
+
+.menu button {
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+#settings-menu {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--text-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+#settings-menu h2 {
+    margin-top: 0;
+}
+
+#settings-menu div {
+    margin: 20px;
+}
+
+#settings-menu label {
+    margin-right: 10px;
+}
+
+#settings-menu input {
+    width: 100px;
+    text-align: center;
+}
+
+#settings-menu button {
+    padding: 10px 20px;
+}
